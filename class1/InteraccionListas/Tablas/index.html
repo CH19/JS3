@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <table id="datos">
+          <tr>
+                    <td>Cedula</td>
+                    <td>Nombre</td>
+                    <td>Materia</td>
+                    <td>Seccion</td>
+          </tr>
+          <tr>
+                    <td>31511780</td>
+                    <td>Christian</td>
+                    <td>JavaScript</td>
+                    <td>900</td>
+          </tr>
+          </table> 
+          <script>
+            const body = document.querySelector('body');
+const titulo = document.createElement('h1');
+const content = document.createTextNode('hola');
+const input = document.createElement('input');
+const boton = document.createElement('button');
+const ol = document.createElement('ol');
+boton.textContent = 'Cambiar Color';
+input.placeholder = 'escribe algo';
+
+boton.addEventListener('click', () => {
+         if(input.value.length < 1){
+          alert('coloca algo');
+         }else{
+           const li = document.createElement('li');
+          li.textContent = `${input.value}`;
+          ol.appendChild(li);
+         }
+})
+titulo.appendChild(content);
+body.appendChild(titulo);
+body.appendChild(input)
+body.appendChild(boton);
+body.appendChild(ol);
+          </script>
+          <script>
+            const tabla = document.querySelector('#datos');
+const objs = Array.from(tabla.rows);
+const rows = document.getElementsByTagName('tr');
+//  for (let i = 0; i < tabla.rows.length; i++) {
+//             //recorrido por fila
+//             //tabla[i] es la fila i-esima de la tabla
+//                 console.log(`En la fila ${i+1} º:`);
+//             for (let j = 0; j < tabla.rows[i].cells.length; j++) {
+//                 console.log(`El valor de la celda ${ j+1 } es ${tabla.rows[i].cells[j].innerText}` ) 
+//             }
+//         }
+        Array.from(tabla).forEach(element => {
+            console.log(element);
+        });
+          </script>
+</body>
+</html>
