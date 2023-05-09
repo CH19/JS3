@@ -38,11 +38,4 @@
 
 //Script de validar checkbox
 
-const ValidarCheckbox = ()=>{
-  if(!form.checkbox){
-    alert('debes aceptar los terminos y condiciones')
-    return false
-  }else{
-    return true;
-  }
-}
+
