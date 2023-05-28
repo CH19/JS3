@@ -173,10 +173,10 @@ $(function() {
     crearCards(e);
   })
   $('#Comprar').addClass('d-none');
+  
   $('.card').click(function(){
     $(this).addClass('bg-success');
     
-    $('#adquiridos').append(`<li id="${$(this).attr('id')}">${$(this).text()}</li>`);
     if(Number($('#adquiridos').children().length) >= 1){
       $('#Comprar').removeClass('d-none');
     }
