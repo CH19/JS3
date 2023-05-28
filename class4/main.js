@@ -1,5 +1,5 @@
 function notificarFade(){
-    // alert('fade finalizado');
+    alert('fade finalizado');
 }
 $(function(){//metodo ready desplegado
     $('#btnSlide').slideUp();    
@@ -20,15 +20,20 @@ $(function(){//metodo ready desplegado
 //Fade 
     $('.card-fade a').click(function(){
     event.preventDefault();
-    $(this).closest('.card-fade').fadeOut(2000);
+    $(this).closest('.card-fade').fadeOut(2000,'linear', notificarFade);//uso de callback
     console.log(    $(this).closest('.card'))
     })
 //Slide    
     $('.card-slide a').click(function(){
         event.preventDefault();
-        $(this).closest('.card-slide').slideUp();
+        $(this).closest('.card-slide').slideUp()
+        // $(this).closest('.card-slide').slideUp(5000);//pueba de detener animaciones 
         $('#btnSlide').slideDown(1500);
     })
+    // $('.card-slide').dblclick(function(){
+    //     //funcion de prueba para detener animaciones
+    //     $(this).stop();
+    // })
     $('#btnSlide').click(function(){
         event.preventDefault();
         $('.card').slideDown();
@@ -37,6 +42,12 @@ $(function(){//metodo ready desplegado
         //Ponerlo como un menu hamburguesa
         // $('.card').slideToggle(); 
     })
-//Animate
-    $()
+//Animate card-aimate
+    $('.card-animate a').click(function(){
+        console.log('hola')
+        $(this).closest('.card-animate').animate({
+            'top': '100px',
+        })
+    })
+
 }) 
